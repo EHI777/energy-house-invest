@@ -92,5 +92,21 @@
     <footer>
         <p>&copy; 2024 Energy House Invest. Wszystkie prawa zastrzeżone.</p>
     </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function revealSections() {
+        let sections = document.querySelectorAll("#projects, #contact, .hero");
+        sections.forEach((section) => {
+            let sectionTop = section.getBoundingClientRect().top;
+            let windowHeight = window.innerHeight;
+            if (sectionTop < windowHeight - 50) {
+                section.classList.add("show");
+            }
+        });
+    }
+    window.addEventListener("scroll", revealSections);
+    revealSections();
+});
+</script>
 </body>
 </html>
