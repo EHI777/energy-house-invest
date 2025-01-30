@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Energy House Invest - nowoczesne i ekologiczne inwestycje deweloperskie. Zainwestuj w przyszłość z nami!">
+    <title>Energy House Invest - Nowoczesne Inwestycje</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Energy House Invest Logo">
+            <h1>Energy House Invest</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Strona Główna</a></li>
+                <li><a href="#about">O Nas</a></li>
+                <li><a href="#projects">Inwestycje</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Budujemy Przyszłość z Energią</h2>
+            <p>Nowoczesne, energooszczędne i ekologiczne projekty deweloperskie, stworzone z myślą o Twoim komforcie.</p>
+            <a href="#projects" class="btn">Zobacz Nasze Projekty</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>O Nas</h2>
+        <div class="about-content">
+            <p>Jesteśmy liderem w budowie nowoczesnych, energooszczędnych nieruchomości. Nasze projekty łączą nowoczesny design, technologie przyjazne środowisku oraz najwyższy standard wykonania.</p>
+            <img src="about.jpg" alt="O Energy House Invest">
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Nasze Inwestycje</h2>
+        <div class="project-list">
+            <div class="project">
+                <img src="project1.jpg" alt="Projekt 1">
+                <h3>Osiedle Zielona Energia</h3>
+                <p>Nowoczesne mieszkania w otoczeniu natury. Energooszczędne budynki z myślą o środowisku.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Projekt 2">
+                <h3>Domy Premium Eco</h3>
+                <p>Ekskluzywne domy jednorodzinne z ekologicznymi rozwiązaniami.</p>
+            </div>
+            <div class="project">
+                <img src="project3.jpg" alt="Projekt 3">
+                <h3>Apartamenty Future</h3>
+                <p>Wysokiej klasy apartamenty w centrum miasta z energooszczędną technologią.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <div class="contact-content">
+            <form action="#" method="POST">
+                <label for="name">Imię i Nazwisko</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Wiadomość</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="btn">Wyślij</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>Email:</strong> kontakt@energyhouseinvest.pl</p>
+                <p><strong>Telefon:</strong> +48 123 456 789</p>
+                <p><strong>Adres:</strong> ul. Nowoczesna 10, 00-001 Warszawa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Energy House Invest. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
