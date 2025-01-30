@@ -69,7 +69,7 @@ nav ul li a:hover {
 
 .hero h2 {
     font-size: 3rem;
-    margin-bottom: 60px; /* Większa przerwa między nagłówkiem a przyciskiem */;
+    margin-bottom: 40px; /* Większa przerwa między nagłówkiem a przyciskiem */;
     text-transform: uppercase;
 }
 
