@@ -48,6 +48,11 @@ nav ul li a:hover {
     color: #ccc;
 }
 
+.logo img {
+    height: 60px; /* Możesz zmienić rozmiar logo */
+    display: block;
+    margin: 0 auto;
+}
 /* Sekcja główna */
 .hero {
     background: url('hero.jpg') no-repeat center center/cover;
