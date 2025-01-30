@@ -7,17 +7,23 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000; /* Czarne tło */
-    color: #fff; /* Biały tekst */
+    background-color: #000;
+    color: #fff;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Nagłówek */
 header {
-    background: #000; /* Czarne tło */
+    background: #000;
     color: white;
     padding: 20px;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 nav ul {
@@ -35,37 +41,30 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #ccc; /* Szary efekt hover */
+    color: #ccc;
 }
 
 /* Sekcja główna */
 .hero {
     background: url('hero.jpg') no-repeat center center/cover;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Przyciemnienie */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
+.hero.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero h2 {
@@ -82,10 +81,11 @@ nav ul li a:hover {
     font-size: 1.2rem;
     border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s, color 0.3s;
+    transition: transform 0.3s ease-in-out, background 0.3s;
 }
 
 .hero .btn:hover {
+    transform: scale(1.1);
     background: #ccc;
     color: black;
 }
@@ -94,17 +94,26 @@ nav ul li a:hover {
 #projects {
     padding: 50px;
     text-align: center;
-    background: #111; /* Ciemne tło */
+    background: #111;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#projects.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-list {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .project {
-    background: #222; /* Bardzo ciemnoszary */
+    background: #222;
     padding: 20px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     border-radius: 10px;
@@ -117,26 +126,25 @@ nav ul li a:hover {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
-.project img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.project h3 {
-    margin-top: 15px;
-    color: white;
-}
-
 /* Sekcja kontaktowa */
 #contact {
     padding: 50px;
-    background-color: #000; /* Czarne tło */
+    background-color: #000;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#contact.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .contact-content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -171,12 +179,12 @@ button.btn {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s, color 0.3s;
+    transition: transform 0.3s ease-in-out, background 0.3s;
 }
 
 button.btn:hover {
+    transform: scale(1.1);
     background: #ccc;
-    color: black;
 }
 
 /* Stopka */
@@ -187,4 +195,19 @@ footer {
     padding: 15px;
     margin-top: 30px;
     font-size: 14px;
+}
+
+/* Responsywność */
+@media screen and (max-width: 768px) {
+    .project {
+        width: 100%;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
 }
