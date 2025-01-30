@@ -1,0 +1,492 @@
+
+
+
+
+
+Powiedziałeś(-aś):
+Pisz jako ekspert nieruchomości, deweloper - Energy House Invest. Stwórz strone internetową dla Energy House Invest
+ChatGPT powiedział:
+ChatGPT
+Energy House Website
+Stworzyłem strukturę strony internetowej dla Energy House Invest. Jeśli potrzebujesz wsparcia przy stylizacji CSS lub dodaniu funkcjonalności, daj znać!
+
+
+
+
+
+
+Powiedziałeś(-aś):
+tak, potrzebuję wsparcia przy stylizacji CSS i dodaniu funkcjonalnosci 
+ChatGPT powiedział:
+ChatGPT
+Energy House Website
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Energy House Invest - nowoczesne i ekologiczne inwestycje deweloperskie. Zainwestuj w przyszłość z nami!">
+    <title>Energy House Invest - Nowoczesne Inwestycje</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ogólne Style */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1rem 2rem;
+        }
+Edytowano
+Dodałem stylizację CSS oraz interaktywny wygląd strony. Jeśli potrzebujesz dodatkowej funkcjonalności, np. formularza z walidacją lub animacji, daj znać!
+
+
+
+
+
+
+Powiedziałeś(-aś):
+w jaki sposób mogę wykorzystać strukturę - gdzie mam to wstawic
+ChatGPT powiedział:
+ChatGPT
+Aby wykorzystać tę strukturę strony internetowej:
+
+Stworzenie plików projektu:
+
+Utwórz nowy folder projektu, np. energy_house_website.
+W tym folderze stwórz plik o nazwie index.html i skopiuj tam cały podany kod.
+Zarządzanie stylami:
+
+Style CSS zostały już osadzone wewnątrz tagu <style> w sekcji <head>.
+Możesz je przenieść do osobnego pliku o nazwie styles.css (i dodać odwołanie link rel="stylesheet" href="styles.css" w <head>).
+Wstawianie zasobów graficznych:
+
+Obrazy, takie jak logo.png, hero.jpg, about.jpg, project1.jpg, project2.jpg i project3.jpg, umieść w folderze images w katalogu projektu.
+Zmień ścieżki do obrazów na images/logo.png itd.
+Przetestowanie lokalnie:
+
+Uruchom stronę w przeglądarce: otwórz plik index.html poprzez dwukrotne kliknięcie.
+Możesz też uruchomić lokalny serwer przy pomocy narzędzi, takich jak VSCode Live Server.
+Hosting strony:
+
+Skorzystaj z darmowego hostingu, np. GitHub Pages, Netlify, lub Vercel.
+W przypadku GitHub Pages:
+Stwórz repozytorium na GitHub.
+Prześlij plik index.html, styles.css i folder z obrazami.
+W ustawieniach repozytorium wybierz opcję GitHub Pages i wskaż branch, z którego ma działać strona.
+Dodanie funkcjonalności:
+
+Jeżeli potrzebujesz dodatkowej interakcji, np. obsługi formularza kontaktowego, możesz użyć JavaScript lub zewnętrznej usługi, takiej jak Formspree (do przesyłania formularzy).
+Czy potrzebujesz dalszej pomocy z implementacją lub rozwinięciem funkcjonalności? 😊
+
+
+
+
+
+
+Powiedziałeś(-aś):
+w czym stworzyc plik index.html
+ChatGPT powiedział:
+ChatGPT
+Możesz stworzyć plik index.html w dowolnym edytorze tekstu, ale najlepiej użyć specjalistycznego edytora kodu. Oto kilka opcji:
+
+1. Visual Studio Code (VS Code) – rekomendowane
+Pobierz i zainstaluj Visual Studio Code.
+Otwórz VS Code i stwórz nowy plik:
+Plik → Nowy plik (File → New File).
+Wybierz Zapisz jako (Save As) i nadaj nazwę index.html.
+Zacznij edytować kod.
+💡 Dodatkowe korzyści w VS Code:
+
+Możesz zainstalować rozszerzenie Live Server, które pozwala podglądać stronę na żywo.
+Wbudowana obsługa HTML, CSS i JavaScript ułatwia pisanie kodu.
+2. Notepad++ (dla Windows)
+Pobierz i zainstaluj Notepad++.
+Otwórz program, stwórz nowy plik i zapisz go jako index.html.
+Jest to lekka alternatywa dla VS Code, ale bez zaawansowanych funkcji.
+3. Sublime Text (Windows, macOS, Linux)
+Pobierz Sublime Text.
+Otwórz nowy plik, zapisz jako index.html i rozpocznij edycję.
+4. Brackets (dla początkujących)
+Pobierz Brackets (dobry dla nowicjuszy).
+Posiada podgląd na żywo i jest łatwy w obsłudze.
+5. Notatnik (Windows) / TextEdit (macOS) – dla absolutnie podstawowego edytowania
+W Windows: Otwórz Notatnik, wpisz kod, zapisz jako index.html, zmieniając typ pliku na „Wszystkie pliki” (All files).
+W macOS: Otwórz TextEdit, przełącz tryb na Plain Text, zapisz jako index.html.
+Podsumowanie – co wybrać?
+✅ Najlepsza opcja dla wygody i funkcjonalności → VS Code
+✅ Lekka alternatywa → Notepad++
+✅ Dla początkujących z łatwym podglądem na żywo → Brackets
+✅ Dla minimalizmu → Notatnik/TextEdit (ale niezalecane do większych projektów)
+
+Jeśli chcesz dodatkowo skonfigurować Live Server w VS Code, mogę pomóc! 🚀
+
+
+
+
+
+
+Powiedziałeś(-aś):
+stwórz repozytorium na GitHub
+ChatGPT powiedział:
+ChatGPT
+Nie mam bezpośredniego dostępu do Twojego konta GitHub, ale mogę poprowadzić Cię krok po kroku, jak stworzyć repozytorium i opublikować stronę na GitHub Pages. 🚀
+
+1. Załóż repozytorium na GitHub
+Zaloguj się do GitHub → https://github.com.
+Kliknij New repository (Nowe repozytorium) w prawym górnym rogu.
+Wpisz nazwę repozytorium, np. energy-house-invest.
+Wybierz Publiczne (aby GitHub Pages działało).
+Nie zaznaczaj "Initialize this repository with a README" – będziemy to robić lokalnie.
+Kliknij Create repository.
+2. Sklonuj repozytorium do swojego komputera
+Jeśli masz Git zainstalowany, otwórz terminal / wiersz poleceń i wpisz:
+
+bash
+Kopiuj
+Edytuj
+git clone https://github.com/TWOJA-NAZWA-UŻYTKOWNIKA/energy-house-invest.git
+Zastąp TWOJA-NAZWA-UŻYTKOWNIKA swoją nazwą z GitHub.
+
+Następnie przejdź do katalogu repozytorium:
+
+bash
+Kopiuj
+Edytuj
+cd energy-house-invest
+3. Skopiuj pliki projektu do repozytorium
+Skopiuj index.html, styles.css i folder z obrazami do katalogu energy-house-invest.
+
+Jeśli masz VS Code, otwórz folder poleceniem:
+
+bash
+Kopiuj
+Edytuj
+code .
+4. Dodaj pliki do repozytorium i wyślij na GitHub
+W terminalu wpisz:
+
+bash
+Kopiuj
+Edytuj
+git add .
+git commit -m "Dodanie plików strony Energy House Invest"
+git push origin main
+Jeśli nie masz branch main, użyj:
+
+bash
+Kopiuj
+Edytuj
+git branch -M main
+git push -u origin main
+5. Włącz GitHub Pages
+Wejdź na stronę repozytorium na GitHub.
+
+Przejdź do Settings → Pages.
+
+W sekcji Branch wybierz main i kliknij Save.
+
+Po kilku minutach Twoja strona będzie dostępna pod adresem:
+
+arduino
+Kopiuj
+Edytuj
+https://TWOJA-NAZWA-UŻYTKOWNIKA.github.io/energy-house-invest/
+💡 Gotowe! Masz teraz stronę internetową online. 🎉
+Jeśli chcesz dodać kolejne zmiany, po prostu edytuj pliki, a potem użyj:
+
+bash
+Kopiuj
+Edytuj
+git add .
+git commit -m "Aktualizacja strony"
+git push origin main
+Jeśli potrzebujesz pomocy na którymś etapie, daj znać! 🚀
+
+
+
+
+
+
+Powiedziałeś(-aś):
+potrzebuję pomocy od etapu 2 - nie mam zainstalowanego Git, w jaki sposób wstawic index.html
+ChatGPT powiedział:
+ChatGPT
+Skoro nie masz zainstalowanego Git, możesz skorzystać z GitHub GUI (przeglądarki internetowej) i ręcznie wstawić plik index.html. Oto jak to zrobić krok po kroku:
+
+📌 1. Pobierz plik index.html na swój komputer
+Otwórz swój edytor tekstowy (VS Code, Notepad++, Brackets, itp.).
+Zapisz kod strony jako index.html.
+📌 2. Stwórz nowe repozytorium na GitHub
+Zaloguj się do GitHub.
+Kliknij w + (prawy górny róg) → New repository.
+Wpisz nazwę repozytorium, np. energy-house-invest.
+Wybierz opcję Public.
+Zaznacz opcję Add a README file (nie jest konieczne, ale może pomóc).
+Kliknij Create repository.
+📌 3. Prześlij plik index.html ręcznie
+Przejdź do nowo utworzonego repozytorium na GitHub.
+Kliknij przycisk Add file → Upload files.
+Przeciągnij plik index.html do okna lub kliknij Choose your files i wybierz go z dysku.
+Po załadowaniu kliknij Commit changes.
+📌 4. Włącz GitHub Pages
+Wejdź do zakładki Settings (Ustawienia) → Pages.
+
+W sekcji Branch wybierz main i kliknij Save.
+
+Po kilku minutach strona będzie dostępna pod adresem:
+
+arduino
+Kopiuj
+Edytuj
+https://TWOJA-NAZWA-UŻYTKOWNIKA.github.io/energy-house-invest/
+(Zmień TWOJA-NAZWA-UŻYTKOWNIKA na swoją nazwę GitHub.)
+
+📌 5. (Opcjonalnie) Dodaj kolejne pliki np. styles.css
+Jeśli masz dodatkowe pliki (np. styles.css), powtórz proces Upload files, przesyłając je do tego samego repozytorium.
+💡 Gotowe! 🎉 Twoja strona powinna być teraz online. Jeśli masz pytania lub chcesz dodać więcej plików, daj mi znać! 🚀
+
+
+
+
+
+
+Powiedziałeś(-aś):
+nie moge wejsc na strone, mam nazwę uzytkownika EHI777, jaki będzie adres
+ChatGPT powiedział:
+ChatGPT
+Jeśli Twój GitHub username to EHI777, to Twój adres strony powinien być:
+
+arduino
+Kopiuj
+Edytuj
+https://EHI777.github.io/energy-house-invest/
+Sprawdź, czy GitHub Pages działa poprawnie:
+Wejdź do swojego repozytorium:
+https://github.com/EHI777/energy-house-invest
+
+Upewnij się, że GitHub Pages jest włączone:
+
+Przejdź do Settings → Pages.
+Sprawdź, czy wybrano branch main.
+Jeśli nie, wybierz go i kliknij Save.
+Jeśli GitHub Pages działa, ale strona się nie ładuje:
+
+Poczekaj kilka minut – czasem GitHub Pages potrzebuje chwili na aktywację.
+Upewnij się, że Twój plik nazywa się dokładnie index.html (małe i duże litery mają znaczenie!).
+Jeśli strona dalej nie działa:
+
+Podaj mi link do Twojego repozytorium, to pomogę Ci sprawdzić problem. 😊
+Spróbuj wejść na swój adres i daj znać, czy działa! 🚀
+
+
+
+
+
+
+Powiedziałeś(-aś):
+ok działa, tylko teraz jak to edytować do ładnego wygładu ??
+ChatGPT powiedział:
+ChatGPT
+Świetnie, że strona działa! Teraz zajmiemy się edycją i nadaniem jej ładnego wyglądu. 😊
+
+📌 1. Edycja plików w GitHub (prosty sposób)
+Jeśli nie masz jeszcze Git, możesz edytować pliki bezpośrednio w przeglądarce:
+
+Przejdź do repozytorium:
+https://github.com/EHI777/energy-house-invest
+Kliknij na plik index.html.
+Kliknij ikonę ołówka (Edit this file).
+Wprowadź zmiany w kodzie HTML.
+Na dole kliknij Commit changes (zatwierdź zmiany).
+Strona zaktualizuje się po kilku minutach.
+📌 2. Dodanie stylizacji CSS (ładniejszy wygląd)
+Teraz dodamy plik styles.css, który nada stronie estetyczny wygląd.
+
+W repozytorium kliknij Add file → Create new file.
+Nazwij plik styles.css.
+Skopiuj i wklej ten kod:
+css
+Kopiuj
+Edytuj
+/* Resetowanie stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Nagłówek */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #18bc9c;
+}
+
+/* Sekcja główna */
+.hero {
+    background: url('hero.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero .btn {
+    background: #18bc9c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.hero .btn:hover {
+    background: #15a589;
+}
+
+/* Sekcja projektów */
+#projects {
+    padding: 50px;
+    text-align: center;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 30%;
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.project h3 {
+    margin-top: 15px;
+}
+
+/* Stopka */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
