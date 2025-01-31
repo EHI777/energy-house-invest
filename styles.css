@@ -204,3 +204,42 @@ footer {
         font-size: 2rem;
     }
 }
+
+/* Stylizacja sekcji O Nas */
+#about {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.about-highlights {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.about-highlights li {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.about-highlights li::before {
+    content: "🔹";
+    margin-right: 0.5rem;
+}
