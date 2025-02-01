@@ -60,7 +60,7 @@ nav ul li a:hover {
 .logo img {
     height: 80px; /* Dostosuj rozmiar */
     display: block;
-    filter: invert(1); /* Zamiana czarnego logo na białe, jeśli jest SVG */
+    filter: brightness(1000%); /* Sprawia, że białe logo jest lepiej widoczne */
 }
 
 /* Sekcja główna */
