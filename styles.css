@@ -58,9 +58,10 @@ nav ul li a:hover {
 }
 
 .logo img {
-    height: 80px; /* Dostosuj rozmiar */
+    height: 80px;
     display: block;
-    filter: brightness(1000%); /* Sprawia, że białe logo jest lepiej widoczne */
+    filter: brightness(1000%);
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Delikatna biała obwódka */
 }
 
 /* Sekcja główna */
