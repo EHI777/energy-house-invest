@@ -53,16 +53,14 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 250px;
-    margin: 10px auto;
+    background: none; /* Usunięcie białego tła */
+    padding: 0; /* Usuń dodatkowe odstępy */
 }
 
 .logo img {
-    height: 80px; /* Zwiększony rozmiar logo */
+    height: 80px; /* Dostosuj rozmiar */
     display: block;
+    filter: invert(1); /* Zamiana białego logo na czarne, jeśli jest SVG */
 }
 
 /* Sekcja główna */
