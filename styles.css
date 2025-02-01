@@ -54,11 +54,11 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     background: none; /* Usunięcie białego tła */
-    padding: 0; /* Usuń dodatkowe odstępy */
+    padding: 10px; /* Dodanie lekkiego odstępu */
 }
 
 .logo img {
-    height: 80px;
+    height: 150px; /* Powiększone logo */
     display: block;
     filter: brightness(1000%);
     border: 2px solid rgba(255, 255, 255, 0.5); /* Delikatna biała obwódka */
