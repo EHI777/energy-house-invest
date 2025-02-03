@@ -159,45 +159,43 @@ nav ul li a:hover {
     margin-right: auto;
 }
 
-/* Sekcja Kontakt */
-#contact {
+/* Sekcja Projektów */
+#projects {
     padding: 50px;
     text-align: center;
     background: #111;
 }
 
-.contact-content {
+.project-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.contact-content p {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+.project {
+    background: #222;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 30%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
 }
 
-.social-links {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
-.social-links a {
-    color: white;
-    font-size: 1.8rem;
-    text-decoration: none;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
-.social-links a i {
-    font-size: 2rem;
-}
-
-.social-links a:hover {
-    color: #ccc;
+.project img:hover {
+    transform: scale(1.05);
 }
