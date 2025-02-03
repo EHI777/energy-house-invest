@@ -200,23 +200,57 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Sekcja Kontakt */
+/* Sekcja kontaktowa */
 #contact {
     padding: 50px;
+    background-color: #000;
     text-align: center;
-    background: #111;
 }
 
 .contact-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.contact-content p {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+form {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #222;
+    color: white;
+}
+
+button.btn {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+button.btn:hover {
+    transform: scale(1.1);
+    background: #ccc;
 }
 
 /* Sekcja Media Społecznościowe */
@@ -249,4 +283,29 @@ nav ul li a:hover {
 
 .social-links a:hover {
     color: #ccc;
+}
+
+/* Stopka */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+/* Responsywność */
+@media screen and (max-width: 768px) {
+    .project {
+        width: 100%;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
 }
