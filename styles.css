@@ -17,7 +17,7 @@ body {
 header {
     background: #000;
     color: white;
-    padding: 20px;
+    padding: 30px; /* Zwiększenie paddingu dla lepszej widoczności */
     text-align: center;
     position: fixed;
     width: 100%;
@@ -73,34 +73,13 @@ nav ul li a:hover {
     text-align: center;
     position: relative;
     flex-direction: column;
+    padding-top: 50px; /* Zwiększenie odstępu od góry */
 }
 
 .hero h2 {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Zwiększenie rozmiaru nagłówka */
     margin-bottom: 60px;
     text-transform: uppercase;
-}
-
-/* Dodanie większego odstępu między tekstem a przyciskiem */
-.hero p {
-    margin-bottom: 40px;
-}
-
-.hero .btn {
-    background: white;
-    color: black;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: transform 0.3s ease-in-out, background 0.3s;
-}
-
-.hero .btn:hover {
-    transform: scale(1.1);
-    background: #ccc;
-    color: black;
 }
 
 /* Sekcja O Nas */
@@ -109,32 +88,37 @@ nav ul li a:hover {
     padding: 50px;
     background: #000;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-direction: row;
 }
 
 #about h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #fff;
-    text-align: center;
+    text-align: left;
 }
 
 .about-content {
     max-width: 800px;
-    margin: 0 auto;
+    text-align: left;
 }
 
 .about-content p {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .about-highlights {
     list-style-type: none;
     padding: 0;
     margin: 20px auto;
-    text-align: center;
+    text-align: left;
 }
 
 .about-highlights li {
@@ -144,14 +128,10 @@ nav ul li a:hover {
 
 /* Stylizacja zdjęcia w sekcji O Nas */
 #about img {
-    max-width: 100%;
+    max-width: 40%; /* Zmniejszenie rozmiaru zdjęcia */
     height: auto;
     border-radius: 10px;
-    margin-top: 20px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Sekcja projektów */
@@ -269,6 +249,7 @@ footer {
     }
 
     .hero h2 {
-        font
-::contentReference[oaicite:0]{index=0}
- 
+        font-size: 2rem;
+    }
+}
+
