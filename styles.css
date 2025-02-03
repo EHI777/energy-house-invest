@@ -73,7 +73,7 @@ nav ul li a:hover {
     text-align: center;
     position: relative;
     flex-direction: column;
-    padding-top: 50px; /* Zwiększenie odstępu od góry */
+    padding-top: 100px; /* Zwiększenie odstępu od menu */
 }
 
 .hero h2 {
@@ -154,6 +154,9 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Sekcja projektów */
