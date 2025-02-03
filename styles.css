@@ -199,3 +199,54 @@ nav ul li a:hover {
 .project img:hover {
     transform: scale(1.05);
 }
+
+/* Sekcja Kontakt */
+#contact {
+    padding: 50px;
+    text-align: center;
+    background: #111;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-content p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+/* Sekcja Media Społecznościowe */
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links a i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.social-links a:hover {
+    color: #ccc;
+}
