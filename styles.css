@@ -82,6 +82,10 @@ nav ul li a:hover {
     text-transform: uppercase;
 }
 
+.hero p {
+    margin-bottom: 50px; /* Zwiększenie odstępu między tekstem a przyciskiem */
+}
+
 .hero .btn {
     background: white;
     color: black;
@@ -107,7 +111,7 @@ nav ul li a:hover {
     background: #000;
     color: #fff;
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Wyrównanie do jednej linii */
     justify-content: center;
     gap: 30px;
     flex-direction: row;
@@ -124,7 +128,7 @@ nav ul li a:hover {
 .about-content {
     max-width: 800px;
     text-align: left;
-    flex: 2;
+    flex: 1;
 }
 
 .about-content p {
@@ -152,7 +156,8 @@ nav ul li a:hover {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    align-self: flex-start;
+    flex: 1; /* Wyrównanie do jednej linii z tekstem */
+    object-fit: cover;
 }
 
 /* Sekcja projektów */
