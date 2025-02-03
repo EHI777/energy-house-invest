@@ -189,8 +189,10 @@ nav ul li a:hover {
 }
 
 .project img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Upewnia się, że obrazki zajmują pełną szerokość kontenera */
+    height: auto; /* Utrzymuje proporcje */
+    max-height: 250px; /* Dostosowanie do poprawnego rozmiaru */
+    object-fit: cover; /* Upewnia się, że zdjęcie dobrze wypełnia ramkę */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out;
