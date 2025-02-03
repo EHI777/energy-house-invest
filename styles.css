@@ -82,6 +82,24 @@ nav ul li a:hover {
     text-transform: uppercase;
 }
 
+.hero .btn {
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid white;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.hero .btn:hover {
+    transform: scale(1.1);
+    background: white;
+    color: black;
+}
+
 /* Sekcja O Nas */
 #about {
     text-align: center;
@@ -89,7 +107,7 @@ nav ul li a:hover {
     background: #000;
     color: #fff;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 30px;
     flex-direction: row;
@@ -100,11 +118,13 @@ nav ul li a:hover {
     margin-bottom: 20px;
     color: #fff;
     text-align: left;
+    flex: 1;
 }
 
 .about-content {
     max-width: 800px;
     text-align: left;
+    flex: 2;
 }
 
 .about-content p {
@@ -132,6 +152,7 @@ nav ul li a:hover {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    align-self: flex-start;
 }
 
 /* Sekcja projektów */
