@@ -73,35 +73,25 @@ nav ul li a:hover {
     text-align: center;
     position: relative;
     flex-direction: column;
-    padding-top: 100px; /* Zwiększenie odstępu od menu */
+    padding-top: 120px; /* Zwiększenie odstępu od górnej sekcji na urządzeniach mobilnych */
 }
 
 .hero h2 {
-    font-size: 2.8rem; /* Zmniejszenie rozmiaru nagłówka */
+    font-size: 2.5rem;
     margin-bottom: 60px;
     text-transform: uppercase;
+    max-width: 90%; /* Zapewnia lepsze dopasowanie do mniejszych ekranów */
 }
 
-.hero p {
-    margin-bottom: 50px; /* Zwiększenie odstępu między tekstem a przyciskiem */
-}
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        padding-top: 150px; /* Większy odstęp dla lepszej widoczności na małych ekranach */
+    }
 
-.hero .btn {
-    background: white;
-    color: black;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    font-weight: bold;
-    border: 2px solid white;
-    transition: transform 0.3s ease-in-out, background 0.3s;
-}
-
-.hero .btn:hover {
-    transform: scale(1.1);
-    background: white;
-    color: black;
+    .hero h2 {
+        font-size: 2rem; /* Zmniejszenie rozmiaru tekstu dla lepszej czytelności */
+    }
 }
 
 /* Sekcja O Nas */
