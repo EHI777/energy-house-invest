@@ -73,7 +73,7 @@ nav ul li a:hover {
     text-align: center;
     position: relative;
     flex-direction: column;
-    padding-top: 100px; /* Zwiększenie odstępu od menu */
+    padding-top: 160px; /* Dalsze zwiększenie odstępu na urządzeniach mobilnych */
 }
 
 .hero h2 {
@@ -107,14 +107,30 @@ nav ul li a:hover {
 @media screen and (max-width: 768px) {
     .hero {
         height: 75vh;
-        padding-top: 150px; /* Większy odstęp dla lepszej widoczności na małych ekranach */
+        padding-top: 180px; /* Jeszcze większy odstęp na mobilnych */
     }
 
     .hero h2 {
-        font-size: 2.2rem; /* Dostosowanie rozmiaru nagłówka */
-        margin-bottom: 80px; /* Zapewnienie odpowiedniego odstępu na urządzeniach mobilnych */
+        font-size: 2rem; /* Jeszcze mniejszy rozmiar tekstu dla lepszej widoczności */
+        margin-bottom: 90px;
+    }
+
+    /* Minimalizacja menu na urządzeniach mobilnych */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    header {
+        padding: 10px; /* Zmniejszenie nagłówka w wersji mobilnej */
     }
 }
+
 
 /* Sekcja O Nas */
 #about {
