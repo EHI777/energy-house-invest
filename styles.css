@@ -73,17 +73,17 @@ nav ul li a:hover {
     text-align: center;
     position: relative;
     flex-direction: column;
-    padding-top: 160px; /* Dalsze zwiększenie odstępu na urządzeniach mobilnych */
+    padding-top: 200px; /* Jeszcze większy odstęp na urządzeniach mobilnych */
 }
 
 .hero h2 {
-    font-size: 2.8rem; /* Zmniejszenie rozmiaru nagłówka */
+    font-size: 2.2rem; /* Ostateczne dopasowanie rozmiaru nagłówka */
     margin-bottom: 60px;
     text-transform: uppercase;
 }
 
 .hero p {
-    margin-bottom: 50px; /* Zwiększenie odstępu między tekstem a przyciskiem */
+    margin-bottom: 50px;
 }
 
 .hero .btn {
@@ -107,19 +107,24 @@ nav ul li a:hover {
 @media screen and (max-width: 768px) {
     .hero {
         height: 75vh;
-        padding-top: 180px; /* Jeszcze większy odstęp na mobilnych */
+        padding-top: 220px; /* Dodatkowy odstęp, aby uniknąć zasłaniania przez menu */
     }
 
     .hero h2 {
-        font-size: 2rem; /* Jeszcze mniejszy rozmiar tekstu dla lepszej widoczności */
+        font-size: 2rem;
         margin-bottom: 90px;
     }
 
-    /* Minimalizacja menu na urządzeniach mobilnych */
+    /* Poprawka menu na urządzeniach mobilnych */
     nav ul {
         flex-direction: column;
         align-items: center;
         padding: 10px 0;
+        display: none; /* Ukrycie menu do momentu rozwinięcia */
+    }
+
+    nav ul.active {
+        display: flex;
     }
 
     nav ul li {
@@ -127,10 +132,13 @@ nav ul li a:hover {
     }
 
     header {
-        padding: 10px; /* Zmniejszenie nagłówka w wersji mobilnej */
+        padding: 15px; /* Poprawiona wysokość nagłówka */
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: rgba(0, 0, 0, 0.8); /* Lekko przezroczysty efekt */
     }
 }
-
 
 /* Sekcja O Nas */
 #about {
