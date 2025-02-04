@@ -73,24 +73,25 @@ nav ul li a:hover {
     text-align: center;
     position: relative;
     flex-direction: column;
-    padding-top: 150px; /* Zwiększenie odstępu od górnej sekcji na urządzeniach mobilnych */
+    padding-top: 180px; /* Dalsze zwiększenie odstępu od górnej sekcji */
 }
 
 .hero h2 {
     font-size: 2.5rem;
-    margin-bottom: 60px;
+    margin-bottom: 80px; /* Zwiększenie odstępu między nagłówkiem a przyciskiem */
     text-transform: uppercase;
     max-width: 90%; /* Zapewnia lepsze dopasowanie do mniejszych ekranów */
 }
 
 @media screen and (max-width: 768px) {
     .hero {
-        height: 70vh;
-        padding-top: 180px; /* Większy odstęp dla lepszej widoczności na małych ekranach */
+        height: 75vh;
+        padding-top: 200px; /* Większy odstęp dla lepszej widoczności na małych ekranach */
     }
 
     .hero h2 {
-        font-size: 2rem; /* Zmniejszenie rozmiaru tekstu dla lepszej czytelności */
+        font-size: 1.8rem; /* Dalsze zmniejszenie rozmiaru tekstu dla lepszej czytelności */
+        margin-bottom: 100px; /* Zwiększenie odstępu na urządzeniach mobilnych */
     }
 }
 
@@ -105,6 +106,7 @@ nav ul li a:hover {
     font-weight: bold;
     border: 2px solid white;
     transition: transform 0.3s ease-in-out, background 0.3s;
+    margin-top: 20px; /* Zapewnienie dodatkowego odstępu nad przyciskiem */
 }
 
 .hero .btn:hover {
