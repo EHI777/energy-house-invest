@@ -347,3 +347,75 @@ footer {
         font-size: 2rem;
     }
 }
+
+/* Sekcja Nasze Realizacje */
+#realizations {
+    padding: 50px;
+    text-align: center;
+    background: #111;
+}
+
+#realizations h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.realization-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.realization {
+    background: #222;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 18%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.realization img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.realization img:hover {
+    transform: scale(1.05);
+}
+
+.realization h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: white;
+}
+
+.realization p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Responsywność */
+@media screen and (max-width: 1024px) {
+    .realization {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .realization {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .realization {
+        width: 100%;
+    }
+}
