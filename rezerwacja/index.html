@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rezerwacja - Energy House Invest</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #0c2e44;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0c2e44;
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin: 0.5rem 0 0.2rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.8rem;
+      background: #0c2e44;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #14577a;
+    }
+    .info {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Energy House Invest</h1>
+    <p>Rezerwacja spotkania lub nieruchomości</p>
+  </header>
+  <main>
+    <h2>Formularz rezerwacyjny</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label for="name">Imię i nazwisko:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Telefon:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="investment">Inwestycja:</label>
+      <select id="investment" name="investment" required>
+        <option value="">-- Wybierz --</option>
+        <option value="Trzy Perły">Osiedle Trzy Perły</option>
+        <option value="Dom pokazowy">Dom pokazowy</option>
+        <option value="Mieszkania">Mieszkania</option>
+        <option value="Inne">Inne</option>
+      </select>
+
+      <label for="message">Uwagi dodatkowe:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Wyślij rezerwację</button>
+    </form>
+    <p class="info">Po przesłaniu formularza skontaktujemy się z Tobą, aby potwierdzić szczegóły.</p>
+  </main>
+</body>
+</html>
