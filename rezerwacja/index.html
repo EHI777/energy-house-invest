@@ -59,9 +59,6 @@
     button:hover{background:var(--brand-strong)}
     button:active{transform:translateY(1px)}
     .note{margin-top:14px; color:var(--muted); font-size:14px; text-align:center}
-    .alert{margin:18px 0 0; padding:14px; border-radius:12px; display:none}
-    .alert.ok{background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0}
-    .alert.err{background:#fef2f2; color:#7f1d1d; border:1px solid #fecaca}
     .hidden{display:none !important}
     footer{color:var(--muted); text-align:center; font-size:13px; margin:18px 0}
     @media (max-width:720px){ form{grid-template-columns:1fr} }
@@ -78,15 +75,7 @@
       <h2 id="t-form">Formularz rezerwacyjny</h2>
       <p class="lead">Wypełnij krótkie zgłoszenie – oddzwonimy maksymalnie w ciągu 24&nbsp;godzin.</p>
 
-      <!-- komunikaty -->
-      <div id="alert-ok" class="alert ok hidden" role="status" aria-live="polite">
-        ✅ Dziękujemy! Twoja rezerwacja została wysłana. Skontaktujemy się wkrótce.
-      </div>
-      <div id="alert-err" class="alert err hidden" role="alert">
-        ❌ Ups! Nie udało się wysłać formularza. Spróbuj ponownie lub zadzwoń: 605&nbsp;721&nbsp;464.
-      </div>
-
-      <form id="reserveForm" method="POST" action="https://formspree.io/f/xvgqjvbz" novalidate>
+      <form id="reserveForm" novalidate>
         <!-- honeypot (antyspam) -->
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" />
 
@@ -146,16 +135,13 @@
     // Aktualny rok w stopce
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Obsługa wysyłki przez AJAX (ładniejsze UX)
     (function () {
       const form = document.getElementById('reserveForm');
       const btn  = document.getElementById('sendBtn');
-      const ok   = document.getElementById('alert-ok');
-      const err  = document.getElementById('alert-err');
+      const ENDPOINT = "https://formspree.io/f/xvgqjvbz";
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        ok.classList.add('hidden'); err.classList.add('hidden');
 
         if (!form.checkValidity()) {
           form.reportValidity();
@@ -165,21 +151,19 @@
         btn.disabled = true; btn.textContent = "Wysyłanie…";
         try {
           const data = new FormData(form);
-          const res = await fetch(form.action, {
+          const res = await fetch(ENDPOINT, {
             method: "POST",
             headers: { "Accept": "application/json" },
             body: data
           });
 
           if (res.ok) {
-            form.reset();
-            ok.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.location.href = "https://energyhouseinvest.pl/dziekujemy/";
           } else {
-            err.classList.remove('hidden');
+            alert("Ups! Nie udało się wysłać formularza. Spróbuj ponownie.");
           }
         } catch (_) {
-          err.classList.remove('hidden');
+          alert("Błąd połączenia. Spróbuj ponownie.");
         } finally {
           btn.disabled = false; btn.textContent = "Wyślij rezerwację";
         }
