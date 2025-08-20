@@ -60,11 +60,10 @@
     button:active{transform:translateY(1px)}
     .note{margin-top:14px; color:var(--muted); font-size:14px; text-align:center}
     .alert{margin:18px 0 0; padding:14px; border-radius:12px; display:none}
-    .alert.ok{display:block; background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0}
-    .alert.err{display:block; background:#fef2f2; color:#7f1d1d; border:1px solid #fecaca}
+    .alert.ok{background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0}
+    .alert.err{background:#fef2f2; color:#7f1d1d; border:1px solid #fecaca}
     .hidden{display:none !important}
     footer{color:var(--muted); text-align:center; font-size:13px; margin:18px 0}
-    /* mobile */
     @media (max-width:720px){ form{grid-template-columns:1fr} }
   </style>
 </head>
@@ -80,14 +79,14 @@
       <p class="lead">Wypełnij krótkie zgłoszenie – oddzwonimy maksymalnie w ciągu 24&nbsp;godzin.</p>
 
       <!-- komunikaty -->
-      <div id="alert-ok" class="alert ok" role="status" aria-live="polite">
-        Dziękujemy! Twoja rezerwacja została wysłana. Skontaktujemy się wkrótce.
+      <div id="alert-ok" class="alert ok hidden" role="status" aria-live="polite">
+        ✅ Dziękujemy! Twoja rezerwacja została wysłana. Skontaktujemy się wkrótce.
       </div>
-      <div id="alert-err" class="alert err" role="alert">
-        Ups! Nie udało się wysłać formularza. Spróbuj ponownie lub zadzwoń: 605&nbsp;721&nbsp;464.
+      <div id="alert-err" class="alert err hidden" role="alert">
+        ❌ Ups! Nie udało się wysłać formularza. Spróbuj ponownie lub zadzwoń: 605&nbsp;721&nbsp;464.
       </div>
 
-      <form id="reserveForm" novalidate>
+      <form id="reserveForm" method="POST" action="https://formspree.io/f/xvgqjvbz" novalidate>
         <!-- honeypot (antyspam) -->
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" />
 
@@ -132,7 +131,6 @@
 
         <!-- temat w mailu -->
         <input type="hidden" name="_subject" value="Nowa rezerwacja z energyhouseinvest.pl" />
-        <!-- gdzie trafi (u Ciebie ustawione w Formspree na energywille@gmail.com) -->
 
         <button type="submit" id="sendBtn">Wyślij rezerwację</button>
         <p class="note">Wysyłając formularz akceptujesz naszą politykę prywatności.</p>
@@ -148,19 +146,17 @@
     // Aktualny rok w stopce
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Obsługa wysyłki przez Formspree, bez opuszczania strony
+    // Obsługa wysyłki przez AJAX (ładniejsze UX)
     (function () {
       const form = document.getElementById('reserveForm');
       const btn  = document.getElementById('sendBtn');
       const ok   = document.getElementById('alert-ok');
       const err  = document.getElementById('alert-err');
-      const ENDPOINT = "https://formspree.io/f/xvgqjvbz";
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         ok.classList.add('hidden'); err.classList.add('hidden');
 
-        // prosta walidacja przeglądarki
         if (!form.checkValidity()) {
           form.reportValidity();
           return;
@@ -169,7 +165,7 @@
         btn.disabled = true; btn.textContent = "Wysyłanie…";
         try {
           const data = new FormData(form);
-          const res = await fetch(ENDPOINT, {
+          const res = await fetch(form.action, {
             method: "POST",
             headers: { "Accept": "application/json" },
             body: data
