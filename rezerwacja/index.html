@@ -13,8 +13,6 @@
       --muted:#6b7280;
       --brand:#0c2e44;
       --brand-strong:#144e6e;
-      --ok:#10b981;
-      --error:#ef4444;
       --radius:14px;
       --shadow:0 10px 30px rgba(0,0,0,.08);
     }
@@ -31,11 +29,11 @@
     header p{margin:0; opacity:.9}
     main{max-width:860px; margin:28px auto; padding:0 16px}
     .card{
-      background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+      background:#fff; border-radius:var(--radius); box-shadow:var(--shadow);
       padding:28px;
     }
     h2{margin:0 0 8px; font-size:clamp(20px,2.8vw,26px); color:var(--brand)}
-    .lead{color:var(--muted); margin:0 0 24px}
+    .lead{color:#6b7280; margin:0 0 24px}
     form{display:grid; grid-template-columns:1fr 1fr; gap:16px}
     label{font-weight:600; font-size:14px; margin-bottom:6px; display:block}
     .field{display:flex; flex-direction:column}
@@ -48,7 +46,7 @@
       border-color:var(--brand); box-shadow:0 0 0 4px rgba(12,46,68,.08);
     }
     textarea{min-height:120px; resize:vertical}
-    .consent{grid-column:1 / -1; display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--muted)}
+    .consent{grid-column:1 / -1; display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#6b7280}
     .consent input{margin-top:3px}
     button{
       grid-column:1 / -1;
@@ -58,9 +56,9 @@
     }
     button:hover{background:var(--brand-strong)}
     button:active{transform:translateY(1px)}
-    .note{margin-top:14px; color:var(--muted); font-size:14px; text-align:center}
+    .note{margin-top:14px; color:#6b7280; font-size:14px; text-align:center}
     .hidden{display:none !important}
-    footer{color:var(--muted); text-align:center; font-size:13px; margin:18px 0}
+    footer{color:#6b7280; text-align:center; font-size:13px; margin:18px 0}
     @media (max-width:720px){ form{grid-template-columns:1fr} }
   </style>
 </head>
@@ -75,9 +73,14 @@
       <h2 id="t-form">Formularz rezerwacyjny</h2>
       <p class="lead">Wypełnij krótkie zgłoszenie – oddzwonimy maksymalnie w ciągu 24&nbsp;godzin.</p>
 
-      <form id="reserveForm" novalidate>
+      <!-- Formularz z fallbackiem (działa też bez JS) -->
+      <form id="reserveForm" action="https://formspree.io/f/xvgqjvbz" method="POST" novalidate>
         <!-- honeypot (antyspam) -->
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" />
+        <!-- temat maila -->
+        <input type="hidden" name="_subject" value="Nowa rezerwacja z energyhouseinvest.pl" />
+        <!-- awaryjne przekierowanie po sukcesie (gdy JS jest wyłączony) -->
+        <input type="hidden" name="_redirect" value="https://energyhouseinvest.pl/dziekujemy/" />
 
         <div class="field">
           <label for="name">Imię i nazwisko</label>
@@ -87,7 +90,7 @@
         <div class="field">
           <label for="phone">Telefon</label>
           <input id="phone" name="phone" type="tel" inputmode="tel"
-                 pattern="^[0-9+\s-]{6,}$" placeholder="np. 605 721 464" required />
+                 pattern="^[0-9+\\s-]{6,}$" placeholder="np. 605 721 464" required />
         </div>
 
         <div class="field">
@@ -118,9 +121,6 @@
           </label>
         </div>
 
-        <!-- temat w mailu -->
-        <input type="hidden" name="_subject" value="Nowa rezerwacja z energyhouseinvest.pl" />
-
         <button type="submit" id="sendBtn">Wyślij rezerwację</button>
         <p class="note">Wysyłając formularz akceptujesz naszą politykę prywatności.</p>
       </form>
@@ -135,10 +135,12 @@
     // Aktualny rok w stopce
     document.getElementById('y').textContent = new Date().getFullYear();
 
+    // Wysyłka przez fetch + przekierowanie (opcja A)
     (function () {
       const form = document.getElementById('reserveForm');
       const btn  = document.getElementById('sendBtn');
-      const ENDPOINT = "https://formspree.io/f/xvgqjvbz";
+      const ENDPOINT = form.action;
+      const THANKYOU = "https://energyhouseinvest.pl/dziekujemy/";
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -158,11 +160,11 @@
           });
 
           if (res.ok) {
-            window.location.href = "https://energyhouseinvest.pl/dziekujemy/";
+            window.location.href = THANKYOU;
           } else {
             alert("Ups! Nie udało się wysłać formularza. Spróbuj ponownie.");
           }
-        } catch (_) {
+        } catch (err) {
           alert("Błąd połączenia. Spróbuj ponownie.");
         } finally {
           btn.disabled = false; btn.textContent = "Wyślij rezerwację";
