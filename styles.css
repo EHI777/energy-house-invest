@@ -413,3 +413,14 @@ footer {
         grid-template-columns: repeat(1, 1fr); /* 1 kolumna na małych ekranach */
     }
 }
+
+.orly-logo {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.orly-logo img {
+  width: 300px;
+  height: auto;
+  border: none;
+}
