@@ -528,3 +528,18 @@ footer {
   height: auto;
   border: none;
 }
+/* SCHOWAJ NAPIS PRZY LOGO */
+.logo .brand { display: none !important; }
+
+/* MENU – białe linki bez podkreślenia, w jednej linii */
+header nav { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+header nav a { color:#fff; text-decoration:none; font-weight:700; }
+header nav a:hover { color:#ccc; }
+
+/* INWESTYCJE – stabilny układ kafelków w jednej linii (responsywnie) */
+.project-list { 
+  display:grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap:20px; 
+}
+.project { width:auto; } /* nadpisuje stare width:30% */
