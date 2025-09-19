@@ -7,7 +7,7 @@
   <title>Energy House Invest - Nowoczesne Inwestycje</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -24,7 +24,7 @@
   <header class="site-header">
     <div class="logo">
       <img src="logo-white.png" alt="Energy House Invest Logo" />
-      <span class="brand">energy house<br/>invest</span>
+      <!-- usunięto dodatkowy napis przy logo -->
     </div>
     <nav class="main-nav">
       <a href="#home">Strona Główna</a>
@@ -75,9 +75,9 @@
         <p>Nowoczesne osiedle w spokojnej lokalizacji, łączące komfort i przestronność z bliskością natury.</p>
       </article>
       <article class="project">
-        <img src="projekt 3.jpg" alt="Apartamenty Future" />
+        <img src="projekt 3.jpg" alt="Wnętrza" />
         <h3>Wnętrza</h3>
-        <p>Nowoczesne, minimalistyczne, czyste i spójne</p>
+        <p>Nowoczesne, minimalistyczne, czyste i spójne.</p>
       </article>
     </div>
   </section>
@@ -193,7 +193,7 @@
       function parseCSV(text){
         const lines = text.replace(/\r/g,'').split('\n').filter(l=>l.trim().length);
         return lines.map(line => {
-          // semi-safe parser dla CSV ze średnikami + cudzysłowy
+          // parser CSV ze średnikiem i cudzysłowami
           const raw = [];
           let cur = '', inQ = false;
           for (let i=0;i<line.length;i++){
@@ -207,8 +207,8 @@
               cur += ch;
             }
           }
-        raw.push(cur);
-        return raw.map(c => c.trim());
+          raw.push(cur);
+          return raw.map(c => c.trim());
         });
       }
 
@@ -240,10 +240,8 @@
       let HEADERS = [], ALL_ROWS = [];
 
       function render(rows){
-        // head
         thead.innerHTML = `<tr>${HEADERS.map(h=>`<th>${h}</th>`).join('')}</tr>`;
 
-        // indeksy kolumn specjalnych
         const idxStatus  = HEADERS.findIndex(h=> (h||'').toLowerCase().includes('status'));
         const idxHistory = HEADERS.findIndex(h=> (h||'').toLowerCase().includes('historia'));
         const numericIdx = HEADERS
@@ -251,16 +249,13 @@
           .filter(([_,isNum])=>isNum)
           .map(([i])=>i);
 
-        // body
         tbody.innerHTML = rows.map(row=>{
           return `<tr>${
             row.map((cell,i)=>{
               let c = (cell||'').replace(/^"(.*)"$/,'$1').replace(/""/g,'"').trim();
               if (i === idxStatus)  return `<td>${badge(c)}</td>`;
               if (i === idxHistory) return `<td class="hist">${c || 'brak'}</td>`;
-              // format liczbowy dla niektórych kolumn
               if (numericIdx.includes(i)) {
-                // rozpoznaj ceny (PLN) i m2 po nagłówku
                 const h = (HEADERS[i]||'').toLowerCase();
                 if (h.includes('cena brutto')) return `<td class="num">${PLN(c)}</td>`;
                 if (h.includes('cena/m'))      return `<td class="num">${NUM(c)}</td>`;
@@ -283,8 +278,18 @@
       fetch(CSV_URL, { cache:'no-store' })
         .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
         .then(text => {
-          const rows = parseCSV(text);
+          let rows = parseCSV(text);
           if (!rows.length) throw new Error('Pusty plik CSV');
+
+          // 🔧 Pomiń nagłówek-tytuł, jeśli jest jako pierwszy wiersz
+          const nonEmptyCount = arr => arr.filter(c => (c||'').trim().length > 0).length;
+          const looksLikeHeaders = arr => {
+            const s = arr.join(' ').toLowerCase();
+            return s.includes('etap') || s.includes('lokal') || s.includes('typ') || s.includes('cena');
+          };
+          if (nonEmptyCount(rows[0]) === 1 && rows.length > 1) rows = rows.slice(1);
+          if (!looksLikeHeaders(rows[0]) && rows.length > 1)   rows = rows.slice(1);
+
           HEADERS = rows[0];
           ALL_ROWS = rows.slice(1);
           render(ALL_ROWS);
