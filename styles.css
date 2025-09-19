@@ -5,12 +5,16 @@
     box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #000;
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
+    /* zapas pod fixed header */
+    padding-top: 140px;
 }
 
 /* Nagłówek */
@@ -24,16 +28,19 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
+    border-bottom: 1px solid #111;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 5px;
 }
 
 nav ul li a {
@@ -55,6 +62,7 @@ nav ul li a:hover {
     align-items: center;
     background: none;
     padding: 10px;
+    gap: 12px;
 }
 
 .logo img {
@@ -73,7 +81,7 @@ nav ul li a:hover {
     text-align: center;
     position: relative;
     flex-direction: column;
-    padding-top: 200px; /* Jeszcze większy odstęp na urządzeniach mobilnych */
+    padding-top: 60px; /* header ma zapas w body; tu mniejszy padding */
 }
 
 .hero h2 {
@@ -105,14 +113,16 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 768px) {
+    body { padding-top: 120px; }
+
     .hero {
         height: 75vh;
-        padding-top: 220px; /* Dodatkowy odstęp, aby uniknąć zasłaniania przez menu */
+        padding-top: 40px;
     }
 
     .hero h2 {
         font-size: 2rem;
-        margin-bottom: 90px;
+        margin-bottom: 40px;
     }
 
     /* Poprawka menu na urządzeniach mobilnych */
@@ -137,13 +147,14 @@ nav ul li a:hover {
         width: 100%;
         top: 0;
         background: rgba(0, 0, 0, 0.8); /* Lekko przezroczysty efekt */
+        backdrop-filter: blur(6px);
     }
 }
 
 /* Sekcja O Nas */
 #about {
     text-align: center;
-    padding: 50px;
+    padding: 50px 20px;
     background: #000;
     color: #fff;
     display: flex;
@@ -197,7 +208,7 @@ nav ul li a:hover {
 
 /* Sekcja projektów */
 #projects {
-    padding: 50px;
+    padding: 50px 20px;
     text-align: center;
     background: #111;
 }
@@ -225,10 +236,10 @@ nav ul li a:hover {
 }
 
 .project img {
-    width: 100%; /* Upewnia się, że obrazki zajmują pełną szerokość kontenera */
-    height: auto; /* Utrzymuje proporcje */
-    max-height: 250px; /* Dostosowanie do poprawnego rozmiaru */
-    object-fit: cover; /* Upewnia się, że zdjęcie dobrze wypełnia ramkę */
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out;
@@ -238,9 +249,116 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+/* ====== CENNIK – NOWE STYLE ====== */
+#pricing {
+    padding: 50px 20px;
+    background: #000;
+}
+
+#pricing h2 { margin-bottom: 10px; }
+
+#pricing .muted {
+    color: #c9c9c9;
+    margin-bottom: 12px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 8px 0 14px;
+    flex-wrap: wrap;
+}
+
+.toolbar label { color: #ddd; }
+
+.toolbar select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #2b2b2b;
+    background: #0f0f10;
+    color: #eaeaea;
+}
+
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid #2b2b2b;
+    color: #eaeaea;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.cennik-wrap {
+    overflow: auto;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    background: #0b0b0c;
+}
+
+/* Tabela */
+#pricing-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 980px;
+    font-size: 14px;
+}
+
+#pricing-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #131313;
+    color: #f1f1f1;
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+#pricing-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #171717;
+    vertical-align: top;
+    color: #eaeaea;
+}
+
+#pricing-table tbody tr:nth-child(odd) { background: #0f0f10; }
+#pricing-table tbody tr:nth-child(even){ background: #121212; }
+
+/* Wyrównanie numeryczne i długa historia */
+#pricing-table td.num { text-align: right; }
+#pricing-table td.hist {
+    max-width: 440px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* Status badges */
+.status{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:999px;
+    font-weight:700;
+    letter-spacing:.2px;
+    border:1px solid transparent;
+}
+.status.dostepny   { background:#e7f7ef; color:#0a7a44; border-color:#cdebdc; }
+.status.rezerwacja { background:#fff7e6; color:#ad6800; border-color:#ffe2b5; }
+.status.sprzedany  { background:#2a2a2a; color:#bdbdbd; border-color:#3a3a3a; }
+
+.note {
+    color:#bdbdbd;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
 /* Sekcja kontaktowa */
 #contact {
-    padding: 50px;
+    padding: 50px 20px;
     background-color: #000;
     text-align: center;
 }
@@ -333,24 +451,9 @@ footer {
     font-size: 14px;
 }
 
-/* Responsywność */
-@media screen and (max-width: 768px) {
-    .project {
-        width: 100%;
-    }
-
-    form {
-        width: 90%;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-}
-
 /* Sekcja Nasze Realizacje */
 #realizations {
-    padding: 50px;
+    padding: 50px 20px;
     text-align: center;
     background: #111;
 }
@@ -409,11 +512,12 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .realization-list {
-        grid-template-columns: repeat(1, 1fr); /* 1 kolumna na małych ekranach */
-    }
+    .project { width: 100%; }
+    form { width: 90%; }
+    .realization-list { grid-template-columns: repeat(1, 1fr); }
 }
 
+/* Orły Nieruchomości */
 .orly-logo {
   margin-top: 20px;
   text-align: right;
