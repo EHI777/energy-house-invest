@@ -1,6 +1,6 @@
 Cennik inwestycji osiedlę TRZY PERŁY, osiedle Dolna
 Etap inwestycji;Lokal;Typ;Standard wykończenia ;Powierzchnia (m2);Cena brutto (PLN);Cena/m2 brutto (PLN);Pomieszczenia/części przynależne;Status;Historia zmian ceny
-I;44;segment skrajny;segment pokazowy - wykończony (meble, wyposażenie);115.12;890000;7731,07;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";dostępny;bez zmian
+I;44;segment skrajny;segment pokazowy - wykończony (meble, wyposażenie);115.12;890000;7731,07;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;bez zmian
 I;42;segment środkowy;stan deweloperski;115.12;0;0;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 I;40;segment środkowy;stan deweloperski;115.12;0;0;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 I;38;segment środkowy;stan deweloperski;115.12;0;0;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
@@ -20,4 +20,5 @@ II;12;segment skrajny;stan deweloperski;115.12;0;0;"garaż 16,93 m2 - w cenie; o
 Osiedle Dolna;2;segment skrajny;stan deweloperski;122,53;0;0;"garaż 18,11 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 Osiedle Dolna;2A;segment środkowy;stan deweloperski;114,44;0;0;"garaż 17,57 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 Osiedle Dolna;2B;segment środkowy;stan deweloperski;114,44;558000;4875,92;"garaż 17,57 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";dostępny;bez zmian
+
 Osiedle Dolna;2C;segment skrajny;stan deweloperski;122,53;0;0;"garaż 18,11 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
