@@ -8,7 +8,7 @@ I Osiedle Trzy Perły;36;segment środkowy;stan deweloperski;115.12;0;0;"garaż 
 I Osiedle Trzy Perły;34;segment środkowy;stan deweloperski;115.12;0;0;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 I Osiedle Trzy Perły;32;segment środkowy;stan deweloperski;115.12;0;0;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 I Osiedle Trzy Perły;30;segment skrajny;stan deweloperski;128;0;0;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
-II Osiedle Trzy Perły;28;segment skrajny;stan deweloperski;115.12;669000;5811,33;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";rezerwacja
+II Osiedle Trzy Perły;28;segment skrajny;stan deweloperski;115.12;0;5811,33;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany
 II Osiedle Trzy Perły;26;segment środkowy;stan deweloperski;115.12;0;0;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 II Osiedle Trzy Perły;24;segment środkowy;stan deweloperski;115.12;0;0;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 II Osiedle Trzy Perły;22;segment środkowy;stan deweloperski;115.12;579000;5029,54;"garaż 16,93 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";dostępny
@@ -21,5 +21,6 @@ Osiedle Dolna;2;segment skrajny;stan deweloperski;122,53;0;0;"garaż 18,11 m2 - 
 Osiedle Dolna;2A;segment środkowy;stan deweloperski;114,44;0;0;"garaż 17,57 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
 Osiedle Dolna;2B;segment środkowy;stan deweloperski;114,44;558000;4875,92;"garaż 17,57 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";dostępny;bez zmian
 Osiedle Dolna;2C;segment skrajny;stan deweloperski;122,53;0;0;"garaż 18,11 m2 - w cenie; ogródek przydomowy - w cenie; 1 miejsce postojowe naziemne - w cenie";sprzedany;sprzedany
+
 
 
